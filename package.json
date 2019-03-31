@@ -1,0 +1,15 @@
+{
+  "name": "OIS-DN2",
+  "description": "2. domača naloga pri predmetu OIS",
+  "author": "Dejan Lavbič <Dejan@lavbic.net>",
+  "dependencies": {
+    "express": "latest",
+    "express-session": "latest",
+    "sqlite3": "latest",
+    "ejs": "latest",
+    "formidable": "latest",
+    "util": "latest",
+    "md5": "latest"
+  },
+  "private": true
+}

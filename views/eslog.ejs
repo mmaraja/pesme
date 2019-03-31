@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<% if (vizualiziraj) { %>
+<?xml-stylesheet type="text/xsl" href="../eSLOG/vizualizacija.xslt"?>
+<% } %>
+<IzdaniRacunEnostavni xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xds="http://uri.etsi.org/01903/v1.1.1#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.gzs.si/e-poslovanje/sheme/eSLOG_1-6_EnostavniRacun.xsd">
+	<Racun Id="data">
+		<!-- verzija priročnika -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>AAI</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>PRIROCNIK_ESLOG_1_6</Tekst1>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- številka računa -->
+		<GlavaRacuna>
+			<VrstaRacuna>380</VrstaRacuna>
+			<StevilkaRacuna>RAC-12345-6789-XX</StevilkaRacuna>
+			<FunkcijaRacuna>9</FunkcijaRacuna>
+			<!-- 1 - Racuna ni potrebno placati. -->
+			<NacinPlacila>1</NacinPlacila>
+			<!-- Stroskovno mesto računa -->
+			<StroskovnoMesto>123456</StroskovnoMesto>
+			<!-- OTHR - drugo -->
+			<KodaNamena>OTHR</KodaNamena>
+		</GlavaRacuna>
+		<!-- naslov računa -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>AAI</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>NASLOV_RACUNA</Tekst1>
+				<Tekst2>Račun za opravljene storitve april 2016</Tekst2>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- datum izdaje računa -->
+		<DatumiRacuna>
+			<VrstaDatuma>137</VrstaDatuma>
+			<DatumRacuna>2016-04-13T00:00:00.0Z</DatumRacuna>
+		</DatumiRacuna>
+		<!-- valuta računa -->
+		<Valuta>
+			<VrstaValuteRacuna>2</VrstaValuteRacuna>
+			<KodaValute>EUR</KodaValute>
+		</Valuta>
+		<!-- kraj izdaje računa -->
+		<Lokacije>
+			<VrstaLokacije>91</VrstaLokacije>
+			<NazivLokacije>Ljubljana</NazivLokacije>
+		</Lokacije>
+		<!-- rok plačila -->
+		<PlacilniPogoji>
+			<PodatkiORokih>
+				<VrstaPogoja>3</VrstaPogoja>
+			</PodatkiORokih>
+			<PlacilniRoki>
+				<VrstaDatumaPlacilnegaRoka>13</VrstaDatumaPlacilnegaRoka>
+				<Datum>2016-04-18T00:00:00.0Z</Datum>
+			</PlacilniRoki>
+		</PlacilniPogoji>
+		<!-- tekst glava -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>AAI</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>GLAVA_TEKST</Tekst1>
+				<Tekst2>Poljubno besedilo, v katerem se opiše karkoli je za izdajatelja ali na</Tekst2>
+				<Tekst3>ročnika, prejemnika pomembno.</Tekst3>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- obdobje od -->
+		<DatumiRacuna>
+			<VrstaDatuma>263</VrstaDatuma>
+			<DatumRacuna>2016-01-01T00:00:00.0Z</DatumRacuna>
+		</DatumiRacuna>
+		<!-- obdobje do -->
+		<DatumiRacuna>
+			<VrstaDatuma>263</VrstaDatuma>
+			<DatumRacuna>2016-04-30T00:00:00.0Z</DatumRacuna>
+		</DatumiRacuna>
+		<!-- datum storitve -->
+		<DatumiRacuna>
+			<VrstaDatuma>35</VrstaDatuma>
+			<DatumRacuna>2016-04-13T00:00:00.0Z</DatumRacuna>
+		</DatumiRacuna>
+		<!-- opis obdobja -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>AAI</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>OPIS_OBDOBJA</Tekst1>
+				<Tekst2>Prvo četrtletje</Tekst2>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- Subjekti na postavki -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>ZZZ</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>3357287</Tekst1>
+				<Tekst2>IME</Tekst2>
+				<Tekst3>BIROKOP D.O.O.</Tekst3>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<PoljubnoBesedilo>
+			<VrstaBesedila>ZZZ</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>3357287</Tekst1>
+				<Tekst2>NASLOV</Tekst2>
+				<Tekst3>ULICA 15. MAJA 5</Tekst3>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<PoljubnoBesedilo>
+			<VrstaBesedila>ZZZ</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>3357287</Tekst1>
+				<Tekst2>KRAJ</Tekst2>
+				<Tekst3>KOPER-CAPODISTRIA</Tekst3>
+				<Tekst4>6000</Tekst4>
+				<Tekst5>SLOVENIJA</Tekst5>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- Namen pri sklicu-->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>AAI</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>REFERENCA_NAMEN</Tekst1>
+				<Tekst2>01</Tekst2>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- izdajatelj -->
+		<PodatkiPodjetja>
+			<NazivNaslovPodjetja>
+				<VrstaPartnerja>II</VrstaPartnerja>
+				<NazivPartnerja>
+					<NazivPartnerja1>SETCCE</NazivPartnerja1>
+				</NazivPartnerja>
+				<Ulica>
+					<Ulica1>Tehnološki park 21</Ulica1>
+					<Ulica3>Objekt D, nadstropje 4</Ulica3>
+				</Ulica>
+				<Kraj>Ljubljana</Kraj>
+				<NazivDrzave>Slovenija</NazivDrzave>
+				<PostnaStevilka>1000</PostnaStevilka>
+				<KodaDrzave>SI</KodaDrzave>
+			</NazivNaslovPodjetja>
+			<FinancniPodatkiPodjetja>
+				<BancniRacun>
+					<StevilkaBancnegaRacuna>SI56051008013037180</StevilkaBancnegaRacuna>
+					<NazivBanke1>ABANKA</NazivBanke1>
+					<BIC>ABANSI2XXXX</BIC>
+				</BancniRacun>
+			</FinancniPodatkiPodjetja>
+			<ReferencniPodatkiPodjetja>
+				<VrstaPodatkaPodjetja>VA</VrstaPodatkaPodjetja>
+				<PodatekPodjetja>SI39705684</PodatekPodjetja>
+			</ReferencniPodatkiPodjetja>
+			<ReferencniPodatkiPodjetja>
+				<VrstaPodatkaPodjetja>GN</VrstaPodatkaPodjetja>
+				<PodatekPodjetja>1594389</PodatekPodjetja>
+			</ReferencniPodatkiPodjetja>
+			<KontaktiPodjetja>
+				<KontaktnaOseba>
+					<ImeOsebe>Monika Baksa</ImeOsebe>
+				</KontaktnaOseba>
+				<Komunikacije>
+					<StevilkaKomunikacije>38616204500</StevilkaKomunikacije>
+					<VrstaKomunikacije>TE</VrstaKomunikacije>
+				</Komunikacije>
+				<Komunikacije>
+					<StevilkaKomunikacije>38616204555</StevilkaKomunikacije>
+					<VrstaKomunikacije>FX</VrstaKomunikacije>
+				</Komunikacije>
+			</KontaktiPodjetja>
+		</PodatkiPodjetja>
+		<!-- naročnik -->
+		<PodatkiPodjetja>
+			<NazivNaslovPodjetja>
+				<VrstaPartnerja>BY</VrstaPartnerja>
+				<NazivPartnerja>
+					<NazivPartnerja1>Univerza v Ljubljani</NazivPartnerja1>
+				</NazivPartnerja>
+				<Ulica>
+					<Ulica1>Večna pot 113</Ulica1>
+				</Ulica>
+				<Kraj>Ljubljana</Kraj>
+				<NazivDrzave>Slovenija</NazivDrzave>
+				<PostnaStevilka>SI</PostnaStevilka>
+				<KodaDrzave></KodaDrzave>
+			</NazivNaslovPodjetja>
+			<FinancniPodatkiPodjetja>
+				<BancniRacun>
+					<StevilkaBancnegaRacuna>SI56020120090111333</StevilkaBancnegaRacuna>
+					<NazivBanke1>Moja banka d.d.</NazivBanke1>
+					<NazivBanke2>Podružnica center</NazivBanke2>
+					<BIC>LJBASI2XXXX</BIC>
+				</BancniRacun>
+			</FinancniPodatkiPodjetja>
+			<ReferencniPodatkiPodjetja>
+				<VrstaPodatkaPodjetja>VA</VrstaPodatkaPodjetja>
+				<PodatekPodjetja>SI67909027</PodatekPodjetja>
+			</ReferencniPodatkiPodjetja>
+			<ReferencniPodatkiPodjetja>
+				<VrstaPodatkaPodjetja>GN</VrstaPodatkaPodjetja>
+				<PodatekPodjetja>1627023</PodatekPodjetja>
+			</ReferencniPodatkiPodjetja>
+			<ReferencniPodatkiPodjetja>
+				<VrstaPodatkaPodjetja>IT</VrstaPodatkaPodjetja>
+				<PodatekPodjetja>11-22-33-44</PodatekPodjetja>
+			</ReferencniPodatkiPodjetja>
+			<KontaktiPodjetja>
+				<KontaktnaOseba>
+					<ImeOsebe>Dejan Lavbič</ImeOsebe>
+				</KontaktnaOseba>
+				<Komunikacije>
+					<StevilkaKomunikacije>gmail@chucknorris.com</StevilkaKomunikacije>
+					<VrstaKomunikacije>EM</VrstaKomunikacije>
+				</Komunikacije>
+				<Komunikacije>
+					<StevilkaKomunikacije>38612419350</StevilkaKomunikacije>
+					<VrstaKomunikacije>TE</VrstaKomunikacije>
+				</Komunikacije>
+				<Komunikacije>
+					<StevilkaKomunikacije>38612419350</StevilkaKomunikacije>
+					<VrstaKomunikacije>FX</VrstaKomunikacije>
+				</Komunikacije>
+			</KontaktiPodjetja>
+		</PodatkiPodjetja>
+		<!-- prejemnik -->
+		<PodatkiPodjetja>
+			<NazivNaslovPodjetja>
+				<VrstaPartnerja>IV</VrstaPartnerja>
+				<NazivPartnerja>
+					<NazivPartnerja1>Prejemnik d.d.</NazivPartnerja1>
+				</NazivPartnerja>
+				<Ulica>
+					<Ulica1>Mali dol 13</Ulica1>
+				</Ulica>
+				<Kraj>Maribor</Kraj>
+				<NazivDrzave>Slovenija</NazivDrzave>
+				<PostnaStevilka>2000</PostnaStevilka>
+				<KodaDrzave>SI</KodaDrzave>
+			</NazivNaslovPodjetja>
+			<FinancniPodatkiPodjetja>
+				<BancniRacun>
+					<StevilkaBancnegaRacuna>SI56251009727460276</StevilkaBancnegaRacuna>
+					<NazivBanke1>PROBANKA</NazivBanke1>
+					<BIC>PROBSI2XXXX</BIC>
+				</BancniRacun>
+			</FinancniPodatkiPodjetja>
+			<ReferencniPodatkiPodjetja>
+				<VrstaPodatkaPodjetja>VA</VrstaPodatkaPodjetja>
+				<PodatekPodjetja>SI22222222</PodatekPodjetja>
+			</ReferencniPodatkiPodjetja>
+			<ReferencniPodatkiPodjetja>
+				<VrstaPodatkaPodjetja>GN</VrstaPodatkaPodjetja>
+				<PodatekPodjetja>1111111</PodatekPodjetja>
+			</ReferencniPodatkiPodjetja>
+			<KontaktiPodjetja>
+				<KontaktnaOseba>
+					<ImeOsebe>Janez Novak</ImeOsebe>
+				</KontaktnaOseba>
+				<Komunikacije>
+					<StevilkaKomunikacije>38616664500</StevilkaKomunikacije>
+					<VrstaKomunikacije>TE</VrstaKomunikacije>
+				</Komunikacije>
+				<Komunikacije>
+					<StevilkaKomunikacije>38616664500</StevilkaKomunikacije>
+					<VrstaKomunikacije>FX</VrstaKomunikacije>
+				</Komunikacije>
+			</KontaktiPodjetja>
+		</PodatkiPodjetja>
+		<!--referenčni dokumenti -->
+		<ReferencniDokumenti VrstaDokumenta="ON">
+			<StevilkaDokumenta>NAR-2016-512</StevilkaDokumenta>
+			<DatumDokumenta>2016-02-25T00:00:00Z</DatumDokumenta>
+		</ReferencniDokumenti>
+		<ReferencniDokumenti VrstaDokumenta="CT">
+			<StevilkaDokumenta>POG-2016-12</StevilkaDokumenta>
+			<DatumDokumenta>2016-01-05T00:00:00Z</DatumDokumenta>
+		</ReferencniDokumenti>
+		<ReferencniDokumenti VrstaDokumenta="AAK">
+			<StevilkaDokumenta>DOB-2016-12</StevilkaDokumenta>
+			<DatumDokumenta>2016-03-06T00:00:00Z</DatumDokumenta>
+		</ReferencniDokumenti>
+		<!-- postavke računa -->
+		<PostavkeRacuna>
+			<Postavka/>
+			<OpisiArtiklov>
+				<KodaOpisaArtikla>F</KodaOpisaArtikla>
+				<OpisArtikla>
+					<OpisArtikla1>Pesmi v elektronski obliki</OpisArtikla1>
+				</OpisArtikla>
+			</OpisiArtiklov>
+			<OpisiArtiklov>
+				<OpisArtikla>
+					<OpisArtikla1>OZNAKA_POSTAVKE</OpisArtikla1>
+					<OpisArtikla2>opisna</OpisArtikla2>
+				</OpisArtikla>
+			</OpisiArtiklov>
+			<KolicinaArtikla>
+				<VrstaKolicine>47</VrstaKolicine>
+				<Kolicina>0</Kolicina>
+				<EnotaMere>PCE</EnotaMere>
+			</KolicinaArtikla>
+			<ZneskiPostavke>
+				<VrstaZneskaPostavke>38</VrstaZneskaPostavke>
+				<ZnesekPostavke>0</ZnesekPostavke>
+			</ZneskiPostavke>
+			<CenaPostavke>
+				<Cena>0</Cena>
+			</CenaPostavke>
+			<DavkiPostavke>
+				<ZneskiDavkovPostavke>
+					<VrstaZneskaDavkaPostavke>124</VrstaZneskaDavkaPostavke>
+				</ZneskiDavkovPostavke>
+			</DavkiPostavke>
+			<!-- Stroskovno mesto postavke -->
+			<StroskovnoMesto>123456</StroskovnoMesto>
+			<!-- Datum ali obdobje dobave na postavki -->
+			<ObdobjeDobave>22.1.-10.6.2016</ObdobjeDobave>
+		</PostavkeRacuna>
+		<%
+			var zanri = {};
+			var pesmi = 0;
+			
+			for (var i=0; i < postavkeRacuna.length; i++) {
+				if (postavkeRacuna[i].zanr in zanri) {
+					zanri[postavkeRacuna[i].zanr]++;
+				} else {
+					zanri[postavkeRacuna[i].zanr] = 1
+				}
+				if (postavkeRacuna[i].opisArtikla.endsWith("(Iron Maiden)") || 
+						postavkeRacuna[i].opisArtikla.endsWith("(Body Count)")) {
+							pesmi++;
+				}
+			}
+			
+			var skupniPopust = 
+				(postavkeRacuna.length >= 5 ? 20 : 0) +
+				(pesmi > 1 ? 5 : 0) +
+				(new Date().getMinutes() <= 30 ? 1 : 0);
+			for (var zanr in zanri) {
+				if (zanri[zanr] >= 3) {
+					skupniPopust += 10;
+					break;
+				}
+			}
+
+			var vsotaSPopustiInDavki = 0, 
+					vsotaZneskovDdv = 0, 
+					vsotaOsnovZaDdv = 0,
+					vsotaVrednosti = 0, 
+					vsotaPopustov = 0;
+			var vsoteOsnovZaDdv = { "0": 0, "9.5": 0, "22": 0};
+			var vsoteZneskovDdv = { "0": 0, "9.5": 0, "22": 0};
+			for (var i=0; i < postavkeRacuna.length; i++) {
+				vrednost = postavkeRacuna[i].kolicina * postavkeRacuna[i].cena;
+				davcnaStopnja = postavkeRacuna[i].stopnja;
+				popustStopnja = postavkeRacuna[i].popust + skupniPopust;
+				popust = postavkeRacuna[i].kolicina * postavkeRacuna[i].cena * (popustStopnja/100);
+				osnovaZaDdv = vrednost - popust;
+				ddv = osnovaZaDdv * (davcnaStopnja/100);
+				
+				vsoteOsnovZaDdv["" + davcnaStopnja] += osnovaZaDdv;
+				vsoteZneskovDdv["" + davcnaStopnja] += ddv;
+				vsotaSPopustiInDavki += (osnovaZaDdv + ddv);
+				vsotaZneskovDdv += ddv;
+				vsotaOsnovZaDdv += osnovaZaDdv;
+				vsotaVrednosti += vrednost;
+				vsotaPopustov += popust;
+		%>
+		<PostavkeRacuna>
+			<Postavka>
+				<StevilkaVrstice><%= (i+1) %></StevilkaVrstice>
+			</Postavka>
+			<DodatnaIdentifikacijaArtikla>
+				<VrstaPodatkaArtikla>5</VrstaPodatkaArtikla>
+				<StevilkaArtiklaDodatna><%= postavkeRacuna[i].stevilkaArtikla %></StevilkaArtiklaDodatna>
+				<VrstaKodeArtiklaDodatna>SA</VrstaKodeArtiklaDodatna>
+			</DodatnaIdentifikacijaArtikla>
+			<OpisiArtiklov>
+				<KodaOpisaArtikla>F</KodaOpisaArtikla>
+				<OpisArtikla>
+					<OpisArtikla1><%= postavkeRacuna[i].opisArtikla %></OpisArtikla1>
+				</OpisArtikla>
+			</OpisiArtiklov>
+			<OpisiArtiklov>
+				<OpisArtikla>
+					<OpisArtikla1>OZNAKA_POSTAVKE</OpisArtikla1>
+					<OpisArtikla2>navadna</OpisArtikla2>
+				</OpisArtikla>
+			</OpisiArtiklov>
+			<OpisiArtiklov>
+				<OpisArtikla>
+					<OpisArtikla1>OPIS_ENOTE_MERE</OpisArtikla1>
+					<OpisArtikla2>Pesem</OpisArtikla2>
+				</OpisArtikla>
+			</OpisiArtiklov>
+			<KolicinaArtikla>
+				<VrstaKolicine>47</VrstaKolicine>
+				<Kolicina><%= postavkeRacuna[i].kolicina %></Kolicina>
+				<EnotaMere>PCE</EnotaMere>
+			</KolicinaArtikla>
+			<ZneskiPostavke>
+				<VrstaZneskaPostavke>203</VrstaZneskaPostavke>
+				<ZnesekPostavke><%= vrednost %></ZnesekPostavke>
+			</ZneskiPostavke>
+			<ZneskiPostavke>
+				<VrstaZneskaPostavke>38</VrstaZneskaPostavke>
+				<ZnesekPostavke><%= osnovaZaDdv + ddv %></ZnesekPostavke>
+			</ZneskiPostavke>
+			<CenaPostavke>
+				<Cena><%= postavkeRacuna[i].cena %></Cena>
+			</CenaPostavke>
+			<ReferencniDokumentiPostavke>
+				<VrstaDokumentaPostavke>ON</VrstaDokumentaPostavke>
+				<StevilkaDokumentaPostavke>NAR-123</StevilkaDokumentaPostavke>
+				<!-- Datum referenčnega dokumenta postavke -->
+				<DatumDokumenta>2016-04-13T00:00:00Z</DatumDokumenta>
+			</ReferencniDokumentiPostavke>
+			<DavkiPostavke>
+				<DavkiNaPostavki>
+					<VrstaDavkaPostavke>VAT</VrstaDavkaPostavke>
+					<OdstotekDavkaPostavke><%= davcnaStopnja %></OdstotekDavkaPostavke>
+				</DavkiNaPostavki>
+				<ZneskiDavkovPostavke>
+					<VrstaZneskaDavkaPostavke>125</VrstaZneskaDavkaPostavke>
+					<Znesek><%= osnovaZaDdv %></Znesek>
+				</ZneskiDavkovPostavke>
+				<ZneskiDavkovPostavke>
+					<VrstaZneskaDavkaPostavke>124</VrstaZneskaDavkaPostavke>
+					<Znesek><%= ddv %></Znesek>
+				</ZneskiDavkovPostavke>
+			</DavkiPostavke>
+			<OdstotkiPostavk>
+				<Identifikator>A</Identifikator>
+				<VrstaOdstotkaPostavke>1</VrstaOdstotkaPostavke>
+				<OdstotekPostavke><%= popustStopnja %></OdstotekPostavke>
+				<VrstaZneskaOdstotka>204</VrstaZneskaOdstotka>
+				<ZnesekOdstotka><%= popust %></ZnesekOdstotka>
+			</OdstotkiPostavk>
+			<!-- Stroskovno mesto postavke -->
+			<StroskovnoMesto>123456</StroskovnoMesto>
+			<!-- Datum ali obdobje dobave na postavki -->
+			<ObdobjeDobave>22.1.-10.6.2016</ObdobjeDobave>
+		</PostavkeRacuna>
+		<% } %>
+
+		<!-- povzetek davkov -->
+		<PovzetekDavkovRacuna>
+			<DavkiRacuna>
+				<VrstaDavka>VAT</VrstaDavka>
+				<OdstotekDavka>22</OdstotekDavka>
+			</DavkiRacuna>
+			<ZneskiDavkov>
+				<VrstaZneskaDavka>125</VrstaZneskaDavka>
+				<ZnesekDavka><%= vsoteOsnovZaDdv["22"] %></ZnesekDavka>
+			</ZneskiDavkov>
+			<ZneskiDavkov>
+				<VrstaZneskaDavka>124</VrstaZneskaDavka>
+				<ZnesekDavka><%= vsoteZneskovDdv["22"] %></ZnesekDavka>
+			</ZneskiDavkov>
+		</PovzetekDavkovRacuna>
+		<PovzetekDavkovRacuna>
+			<DavkiRacuna>
+				<VrstaDavka>VAT</VrstaDavka>
+				<OdstotekDavka>9.5</OdstotekDavka>
+			</DavkiRacuna>
+			<ZneskiDavkov>
+				<VrstaZneskaDavka>125</VrstaZneskaDavka>
+				<ZnesekDavka><%= vsoteOsnovZaDdv["9.5"] %></ZnesekDavka>
+			</ZneskiDavkov>
+			<ZneskiDavkov>
+				<VrstaZneskaDavka>124</VrstaZneskaDavka>
+				<ZnesekDavka><%= vsoteZneskovDdv["9.5"] %></ZnesekDavka>
+			</ZneskiDavkov>
+		</PovzetekDavkovRacuna>
+		<PovzetekDavkovRacuna>
+			<DavkiRacuna/>
+			<ZneskiDavkov>
+				<VrstaZneskaDavka>125</VrstaZneskaDavka>
+				<ZnesekDavka><%= vsoteOsnovZaDdv["0"] %></ZnesekDavka>
+			</ZneskiDavkov>
+		</PovzetekDavkovRacuna>
+		<!-- davčni tekst -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>TXD</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>DAVCNI_TEKST</Tekst1>
+				<Tekst2>Posebno besedilo kot ga predpisuje zakonodaja in se nanaša na posebnos</Tekst2>
+				<Tekst3>ti pri obračunu davka na računu, s sklicevanjem na člen itd.</Tekst3>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- dodatni tekst -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>AAI</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>DODATNI_TEKST</Tekst1>
+				<Tekst2>Prosimo, da račun poravnate na transakcijski račun: SI56 9900 0000 372</Tekst2>
+				<Tekst3>2 222 odprt pri Naši banki d.d.. Za nepravočasna plačila zaračunavamo</Tekst3>
+				<Tekst4> z zakonom predpisane zamudne obresti.</Tekst4>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- obrnjena davna obveznost -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>AAI</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>OBRNJENA_DAVCNA_OBVEZNOST</Tekst1>
+				<Tekst2>true</Tekst2>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- fakturist -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>AAI</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>FAKTURIST</Tekst1>
+				<Tekst2>Tone Hojc</Tekst2>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- vrednost postavk brez popustov -->
+		<PovzetekZneskovRacuna>
+			<ZneskiRacuna>
+				<VrstaZneska>79</VrstaZneska>
+				<ZnesekRacuna><%= vsotaVrednosti %></ZnesekRacuna>
+			</ZneskiRacuna>
+			<SklicZaPlacilo>
+				<SklicPlacila>PQ</SklicPlacila>
+			</SklicZaPlacilo>
+		</PovzetekZneskovRacuna>
+		<!-- vsota popustov -->
+		<PovzetekZneskovRacuna>
+			<ZneskiRacuna>
+				<VrstaZneska>53</VrstaZneska>
+				<ZnesekRacuna><%= vsotaPopustov %></ZnesekRacuna>
+			</ZneskiRacuna>
+			<SklicZaPlacilo>
+				<SklicPlacila>PQ</SklicPlacila>
+			</SklicZaPlacilo>
+		</PovzetekZneskovRacuna>
+		<!-- osnova za DDV -->
+		<PovzetekZneskovRacuna>
+			<ZneskiRacuna>
+				<VrstaZneska>125</VrstaZneska>
+				<ZnesekRacuna><%= vsotaOsnovZaDdv %></ZnesekRacuna>
+			</ZneskiRacuna>
+			<SklicZaPlacilo>
+				<SklicPlacila>PQ</SklicPlacila>
+			</SklicZaPlacilo>
+		</PovzetekZneskovRacuna>
+		<!-- DDV -->
+		<PovzetekZneskovRacuna>
+			<ZneskiRacuna>
+				<VrstaZneska>176</VrstaZneska>
+				<ZnesekRacuna><%= vsotaZneskovDdv %></ZnesekRacuna>
+			</ZneskiRacuna>
+			<SklicZaPlacilo>
+				<SklicPlacila>PQ</SklicPlacila>
+			</SklicZaPlacilo>
+		</PovzetekZneskovRacuna>
+		<!-- vrednost postavk s popusti in DDV -->
+		<PovzetekZneskovRacuna>
+			<ZneskiRacuna>
+				<VrstaZneska>86</VrstaZneska>
+				<ZnesekRacuna><%= vsotaSPopustiInDavki %></ZnesekRacuna>
+			</ZneskiRacuna>
+			<SklicZaPlacilo>
+				<SklicPlacila>PQ</SklicPlacila>
+			</SklicZaPlacilo>
+		</PovzetekZneskovRacuna>
+		<!-- zamudne obresti -->
+		<PovzetekZneskovRacuna>
+			<ZneskiRacuna>
+				<VrstaZneska>131</VrstaZneska>
+				<ZnesekRacuna>0</ZnesekRacuna>
+			</ZneskiRacuna>
+			<SklicZaPlacilo>
+				<SklicPlacila>PQ</SklicPlacila>
+			</SklicZaPlacilo>
+		</PovzetekZneskovRacuna>
+		<!-- predplačilo -->
+		<PovzetekZneskovRacuna>
+			<ZneskiRacuna>
+				<VrstaZneska>0</VrstaZneska>
+				<ZnesekRacuna>50</ZnesekRacuna>
+			</ZneskiRacuna>
+			<SklicZaPlacilo>
+				<SklicPlacila>PQ</SklicPlacila>
+			</SklicZaPlacilo>
+		</PovzetekZneskovRacuna>
+		<!-- izravnava -->
+		<PovzetekZneskovRacuna>
+			<ZneskiRacuna>
+				<VrstaZneska>165</VrstaZneska>
+				<ZnesekRacuna>0</ZnesekRacuna>
+			</ZneskiRacuna>
+			<SklicZaPlacilo>
+				<SklicPlacila>PQ</SklicPlacila>
+			</SklicZaPlacilo>
+		</PovzetekZneskovRacuna>
+		<!-- znesek za plačilo -->
+		<PovzetekZneskovRacuna>
+			<ZneskiRacuna>
+				<VrstaZneska>9</VrstaZneska>
+				<ZnesekRacuna><%= vsotaSPopustiInDavki %></ZnesekRacuna>
+			</ZneskiRacuna>
+			<SklicZaPlacilo>
+				<SklicPlacila>PQ</SklicPlacila>
+				<StevilkaSklica>SI005026024-70200008-1</StevilkaSklica>
+			</SklicZaPlacilo>
+		</PovzetekZneskovRacuna>
+		<!-- tekst noga -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>AAI</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>NOGA_TEKST</Tekst1>
+				<Tekst2>Pravna oseba SETCCE je vpisana pri Okrožnem sodišču v Ljubljani, št. r</Tekst2>
+				<Tekst3>eg. vpisa 061/13422800, dejavnost:73.102, ustanovitveni vložek 10.432,</Tekst3>
+				<Tekst4>22 EUR.</Tekst4>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- davčno potrjevanje -->
+		<PoljubnoBesedilo>
+			<VrstaBesedila>TXD</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>DAVCNO_POTRJEVANJE</Tekst1>
+				<Tekst2>15:03</Tekst2>
+				<Tekst3>PRODAJALEC1</Tekst3>
+				<Tekst4>56dcaf93-933a-497d-b864-0ba1e8f4fa2</Tekst4>
+				<Tekst5>8402f0a963e37b2258e034fc8ae7ffc1</Tekst5>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<PoljubnoBesedilo>
+			<VrstaBesedila>TXD</VrstaBesedila>
+			<Besedilo>
+				<Tekst1>ZOI_VIZUALIZACIJA</Tekst1>
+				<Tekst2>279042272585972554922067893753871413584876543211601021503002</Tekst2>
+			</Besedilo>
+		</PoljubnoBesedilo>
+		<!-- globalni popust/super rabat -->
+		<GlobalniPopusti>
+			<OpisPopusta>SUPER RABAT</OpisPopusta>
+			<TipPopusta>PP</TipPopusta>
+			<OdstotekPopusta>10</OdstotekPopusta>
+			<ZnesekPopusta>0</ZnesekPopusta>
+		</GlobalniPopusti>
+	</Racun>
+	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="Signature-470602134">
+		<ds:SignedInfo>
+			<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+			<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+			<ds:Reference Id="refData" Type="http://www.gzs.si/shemas/eslog/racun/1.5#Racun" URI="#data">
+				<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+				<ds:DigestValue>xTH3t7nDeK2qcBbqLnnJ94f87lg=</ds:DigestValue>
+			</ds:Reference>
+			<ds:Reference Id="Ref-278699572" Type="http://uri.etsi.org/01903/v1.1.1#SignedProperties"
+						  URI="#SignedProperties-1339634283">
+				<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+				<ds:DigestValue>atlmJYsEk9q99qlVnt1XiDwlYNA=</ds:DigestValue>
+			</ds:Reference>
+		</ds:SignedInfo>
+		<ds:SignatureValue>
+			w3r8waIiEEWEXv0j9hal0tbiheQc0OXQw+2NBa5NDVownftYvjr1v+ZqZrPyGNGekxrZBmJo1Wtdu6gdO7WDixPIdK+wJAZXa3LD9gUWSvRZ2govzbGbY7PJL4emEsf042a8chGDnRm4ckmzyjGHeIam+/myg7OpUdP0C8n80VXhh6claIwWOYk6YGAnETmzLb8WN7Uj5X53RFe1MiRxJHFqUPdiOiOKqaCTYYaouC1aX6I5NDxOy/WlttJLcuitTjmB14TAGrZGY6u1xBlhqnzTyazQBRUwtbV6YonHKW2ygjfS0JT2qpJoLNN6YESBO8/CJNO/8wwu8cRNcxciQg==
+		</ds:SignatureValue>
+		<ds:KeyInfo>
+			<ds:X509Data>
+				<ds:X509Certificate>
+					MIIFejCCBGKgAwIBAgIEO0RPIDANBgkqhkiG9w0BAQUFADA9MQswCQYDVQQGEwJzaTEbMBkGA1UEChMSc3RhdGUtaW5zdGl0dXRpb25zMREwDwYDVQQLEwhzaWdlbi1jYTAeFw0xMjEyMjExMjA2NTBaFw0xNzEyMjIwNjA2NTlaMIGiMQswCQYDVQQGEwJzaTEbMBkGA1UEChMSc3RhdGUtaW5zdGl0dXRpb25zMREwDwYDVQQLEwhzaWdlbi1jYTEWMBQGA1UECxMNY29tcGFuaWVzLXdlYjEXMBUGA1UECxMOWlpJIC0gODUxOTA1ODYxMjAUBgNVBAUTDTI0NzIyOTk3MTgwMTQwGgYDVQQDExNwb2Rwb3JhIHVwb3JhYm5pa29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzhohx/Oa1A4dlPOgk4d+JWW8QJD+uMYH61Mf+1T1C94Dwvy6kKW3FUddkeZ/8Jn8M9I7/BbrXIiQkWDGvsgPq5fjSihknTCVIpi63Jw08dv3xbc+paYfORItNtp/wsTquizpm6R8ABLxqSzK/PG2kueoWrAdskSCxVAi6zSmPBMq/NmQ9X0hL9EI2b7bVZR1HRZ01trMgwZnVzayprBg1QMRETWe9cGbXxxIzuproIrhxzGMppvplNXnT93X0NYdssD+qHpYIDYD8V7xNrOClDuT+D81cNJsB9kCwEFBpvYfhVy2IuLR7QO0ntPUC/QII4UMtdofUoyCmV9AeN9NpQIDAQABo4ICGjCCAhYwDgYDVR0PAQH/BAQDAgWgMEsGA1UdIAREMEIwNgYLKwYBBAGvWQIBAQIwJzAlBggrBgEFBQcCARYZaHR0cDovL3d3dy5jYS5nb3Yuc2kvY3BzLzAIBgYEAIswAQIwGAYIKwYBBQUHAQMEDDAKMAgGBgQAjkYBATAZBgNVHREEEjAQgQ5wb2Rwb3JhQHp6aS5zaTCB7gYDVR0fBIHmMIHjMFagVKBSpFAwTjELMAkGA1UEBhMCc2kxGzAZBgNVBAoTEnN0YXRlLWluc3RpdHV0aW9uczERMA8GA1UECxMIc2lnZW4tY2ExDzANBgNVBAMTBkNSTDI0MDCBiKCBhaCBgoZXbGRhcDovL3g1MDAuZ292LnNpL291PXNpZ2VuLWNhLG89c3RhdGUtaW5zdGl0dXRpb25zLGM9c2k/Y2VydGlmaWNhdGVSZXZvY2F0aW9uTGlzdD9iYXNlhidodHRwOi8vd3d3LnNpZ2VuLWNhLnNpL2NybC9zaWdlbi1jYS5jcmwwKwYDVR0QBCQwIoAPMjAxMjEyMjExMjA2NTBagQ8yMDE3MTIyMjA2MDY1OVowHwYDVR0jBBgwFoAUcXuKBh8xBVWrYBJ3RyAeA4gY7IkwHQYDVR0OBBYEFI6YVKwrnHL4Xi6T09VvUD+rx7EdMAkGA1UdEwQCMAAwGQYJKoZIhvZ9B0EABAwwChsEVjcuMQMCA6gwDQYJKoZIhvcNAQEFBQADggEBAFLxdSTNwVgBXES5d7v/VJpVWfbnEY1xBBn4xQyxAfq6mnl6r307ssyf3DkclhlTvOOyBGJQMkhuxplEQrYoApnkGdyTlnUHvam0Krt9omdMr2Jl+GOZBxi49TXAVId/EkNlIJd9KGJr+50f2+GwfpmCj2cw6FhIpNecnS6oQadaOJp3wVVD/HUhEnFXfR29GZKTW50WLod/PVPn1X4/pcHO1cbpWowtDIYAVi5OZ4f/mKcxayH+6P2BM8hS1ctQsm5ReJm4KH4RC74gb3ckjQuSRYJSbEmXqOfbd3WSPTiz5z2Z06AdP6UiGWx8yXQZxO4KSAFoD5zrNoJV8H2b/I8=
+				</ds:X509Certificate>
+			</ds:X509Data>
+		</ds:KeyInfo>
+		<ds:Object>
+			<QualifyingProperties xmlns="http://uri.etsi.org/01903/v1.1.1#" Target="#Signature-2089245362">
+				<SignedProperties Id="SignedProperties-1339634283">
+					<SignedSignatureProperties>
+						<SigningTime>2016-01-28T10:00:10.932Z</SigningTime>
+						<SigningCertificate>
+							<Cert>
+								<CertDigest>
+									<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+									<DigestValue>BZVYHb9lBHLv73sjQP1nmSr922w=</DigestValue>
+								</CertDigest>
+								<IssuerSerial>
+									<ds:X509IssuerName>OU=sigen-ca, O=state-institutions, C=si</ds:X509IssuerName>
+									<ds:X509SerialNumber>994332448</ds:X509SerialNumber>
+								</IssuerSerial>
+							</Cert>
+						</SigningCertificate>
+						<SignaturePolicyIdentifier>
+							<SignaturePolicyImplied/>
+						</SignaturePolicyIdentifier>
+					</SignedSignatureProperties>
+				</SignedProperties>
+			</QualifyingProperties>
+		</ds:Object>
+	</ds:Signature>
+</IzdaniRacunEnostavni>

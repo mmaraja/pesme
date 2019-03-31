@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>..:: Prodajalna pesmi ::..</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		.form-control#EmailValidate {
+			border-width: 0;
+			display: inline;
+			-webkit-box-shadow: none;
+		}
+
+		.racun-stranke {
+			background-color: #ccefff;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container text-center">
+	<div class="row">
+		<div class="col-md-6">
+			<h3><span class="glyphicon glyphicon-user"></span> Dodajanje nove stranke</h3>
+			<div id="stranke">
+				<form action="" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<input type="text" class="form-control" id="FirstName" 
+						  name="FirstName" placeholder="Ime"/>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="LastName" 
+						  name="LastName" placeholder="Priimek"/>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="Company" 
+						  name="Company" placeholder="Podjetje"/>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="Address" 
+						  name="Address" placeholder="Naslov"/>
+					</div>
+					<div class="form-group">
+						<div class="ui-widget">
+							<label for="tags"></label>
+							<input type="text" class="form-control" id="City" 
+							  name="City" placeholder="Mesto"/>
+						</div>
+
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="State" 
+						  name="State" placeholder="Okrožje"/>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="Country" 
+						  name="Country" placeholder="Država" readonly/>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="PostalCode" 
+						  name="PostalCode" placeholder="Poštna številka" readonly/>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="Phone" 
+						  name="Phone" placeholder="Telefon"/>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="Fax" 
+						  name="Fax" placeholder="Faks"/>
+					</div>
+					<div class="form-group" style="text-align: left">
+						<input type="email" class="form-control" id="Email" 
+						  name="Email" placeholder="E-pošta" 
+						  style="width: 90%;margin-right: 10px;display: inline;"/>
+						<span id="EmailValidate" class="glyphicon glyphicon-remove"></span>
+					</div>
+					<div class="form-group">
+						<p class="help-block"><%= sporocilo %></p>
+						<input type="submit" id="Register" class="btn btn-default" 
+						  value="Registracija" disabled/>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<h3><span class="glyphicon glyphicon-hand-right"></span> Izbira stranke</h3>
+			<div id="seznam1">
+				<form action="/stranka" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<select size="10" id="seznamStrank" name="seznamStrank" class="form-control">
+							<% seznamStrank.forEach(function(stranka) { %>
+							<option value="<%= stranka.CustomerId %>">
+								<%= stranka.FirstName %> <%= stranka.LastName %>, <%= stranka.Email %>
+							</option>
+							<% }) %>
+						</select>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-default" value="Izbira stranke"/>
+					</div>
+				</form>
+			</div>
+			<br/>
+			<h3><span class="glyphicon glyphicon-usd"></span> Izbira računa</h3>
+			<div id="seznam2">
+				<form action="/izpisiRacunBaza" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<select size="10" id="seznamRacunov" name="seznamRacunov" class="form-control">
+							<% seznamRacunov.forEach(function(racun) { %>
+							<option value="<%= racun.InvoiceId %>" customerId="<%= racun.CustomerId %>" selected>
+								<%= racun.Naziv %>
+							</option>
+							<% }) %>
+						</select>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-default" value="Izbira računa"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function () {
+		var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i;
+
+		document.getElementById("City").addEventListener("keyup", function () {
+			if (this.value.length == 0) {
+				document.getElementById("PostalCode").value = "";
+				document.getElementById("Country").value = "";
+				document.getElementById("Register").disabled = true;
+			}
+
+		});
+	});
+</script>
+</body>
+</html>

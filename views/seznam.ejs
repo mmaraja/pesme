@@ -1,0 +1,175 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prodajalna pesmi</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		div.pesem button {
+			width: 100%;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+  <div class="container text-center">
+  	<div class="row">
+  		<div class="col-md-6">
+  			<h3><span class="glyphicon glyphicon-music"></span> Seznam 100 najbolje prodajanih pesmi</h3>
+  			
+        <div id="pesmi">
+          <% seznamPesmi.forEach(function(pesem) { %>
+            <div id="<%= pesem.id %>" class="pesem">
+              <button type="button" class="btn btn-default btn-xs">
+                <span class="glyphicon glyphicon-plus"></span>
+                <strong><span class="naziv"><%= pesem.pesem %></span></strong>
+                (<span class="izvajalec"><%= pesem.izvajalec %></span>)
+                @ <span class="cena"><%= Math.round(100 * pesem.cena + 
+                  pesem.stopnja * pesem.cena) / 100 %></span> € 
+                (<span class="stopnja"><%= pesem.stopnja %></span>%)
+              </button>
+            </div>
+          <% }) %>
+        </div>
+  		</div>
+  		<div class="col-md-6">
+  		  <% if (nazivStranke.length > 0) { %>
+  			<br/>
+  			<form action="/odjava" method="post" enctype="multipart/form-data">
+  				<div class="form-group">
+  					<label for="odjavaGumb">Odjava trenutno izbrane stranke&#160;</label><%= nazivStranke %><br/>
+  					<input id="odjavaGumb" type="submit" class="btn btn-default" value="Odjava"/>
+  				</div>
+  			</form>
+  			<% } %>
+  
+  			<h3><span class="glyphicon glyphicon-shopping-cart"></span> Nakupovalna košarica <span id="cena">0</span> €
+  			</h3>
+  			<div id="kosarica"></div>
+  			<div id="sporocilo">&nbsp;</div>
+  			<button id="racun_html" type='button' class='btn btn-success btn-xs' disabled>
+  				<span class='glyphicon glyphicon-euro'></span> Pripravi račun (HTML)
+  			</button>&nbsp;
+  			<button id="racun_xml" type='button' class='btn btn-success btn-xs' disabled>
+  				<span class='glyphicon glyphicon-euro'></span> Pripravi račun (XML)
+  			</button>
+  			<br/> <br/>
+  			<button id="podrobnosti" type='button' class='btn btn-info btn-s' disabled>
+  				<span class='glyphicon glyphicon-info-sign'></span> Podrobnosti
+  			</button>&nbsp;
+  			<button id="izbrisi" type='button' class='btn btn-danger btn-s' disabled>
+  				<span class='glyphicon glyphicon-trash'></span> Izbriši košarico
+  			</button>
+  		</div>
+  	</div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+  	$(document).ready(function () {
+  		function izracunajCenoKosariceZDavkom() {
+  			return -1;
+  		}
+  
+  		function premakniPesemIzSeznamaVKosarico(id, naziv, izvajalec, cena, stopnja, dodajVSejo) {
+  			if (dodajVSejo) {
+  				$.get('/kosarica/' + id, function (podatki) { /* Dodaj izbrano pesem v sejo */ })
+  			}
+        $("#kosarica").append(
+          "<div id='" + id + "' class='pesem'>\
+            <button type='button' class='btn btn-default btn-xs'>\
+              <span class='glyphicon glyphicon-minus'></span>\
+              <strong> <span class='naziv'>" + naziv + "</span></strong> \
+              (<span class='izvajalec'>" + izvajalec + "</span>) \
+              @ <span class='cena'>" + Math.round(100 * cena + stopnja * cena) / 100 + "</span> € \
+              (<span class='stopnja'>" + stopnja + "</span>%)\
+            </button>\
+          </div>"
+        );
+  			$("#kosarica #" + id).click(function () {
+  				var pesem_kosarica = $(this);
+  				$.get("/kosarica/" + id, function (podatki) {
+  					/* Odstrani izbrano pesem iz seje */
+  					if (!podatki || Object.keys(podatki).length == 0) {
+  						$("#racun_html").prop("disabled", true);
+  						$("#racun_xml").prop("disabled", true);
+  						$("#izbrisi").prop("disabled", true);
+  						$("#podrobnosti").prop("disabled", true);
+  					}
+  				});
+  				pesem_kosarica.remove();      /* Izbriši pesem iz desnega seznama */
+  				$("#pesmi #" + id).show();    /* Pokaži pesem v levem seznamu */
+  				$("#cena").html(izracunajCenoKosariceZDavkom());
+  				$("#sporocilo").html("&nbsp;");
+  			})
+  			$("#pesmi #" + id).hide();      /* Skrij pesem v levem seznamu */
+  			$("#racun_html").prop("disabled", false);
+  			$("#racun_xml").prop("disabled", false);
+  			$("#izbrisi").prop("disabled", false);
+  			$("#podrobnosti").prop("disabled", false);
+  			$("#cena").html(izracunajCenoKosariceZDavkom());
+  			$("#sporocilo").html("&nbsp;");
+  		}
+  
+  		// Posodobi podatke iz košarice na spletni strani
+  		$.get("/kosarica", function (kosarica) {
+  			kosarica.forEach(function (pesem) {
+  				premakniPesemIzSeznamaVKosarico(pesem.stevilkaArtikla,
+  					pesem.opisArtikla.split(' (')[0],
+  					(pesem.opisArtikla.split(' (')[1]).split(')')[0],
+  					pesem.cena,
+  					pesem.stopnja,
+  					false
+  				);
+  			})
+  		});
+  		// Klik na pesem v levem seznamu sproži dodajanje pesmi v desni seznam
+  		$("#pesmi .pesem").click(function () {
+  			var pesem = $(this);
+  			var stopnja = pesem.find("button .stopnja").text();
+  			premakniPesemIzSeznamaVKosarico(pesem.attr("id"),
+  				pesem.find("button .naziv").text(),
+  				pesem.find("button .izvajalec").text(),
+  				pesem.find("button .cena").text() / (1 + stopnja / 100),
+  				stopnja,
+  				true
+  			);
+  		});
+  
+  		function preveriPogojeNakupa() {
+  			return true;
+  		}
+  
+  		$("#racun_html").click(function () {
+  			if (preveriPogojeNakupa())
+  				window.location = '/izpisiRacun/html';
+  		});
+  		$("#racun_xml").click(function () {
+  			if (preveriPogojeNakupa())
+  				window.location = '/izpisiRacun/xml';
+  		});
+  
+  		$("#podrobnosti").click(function () {
+  			$.get("/podrobnosti", function (podrobnosti) {
+  				$("#sporocilo").html(
+  				  "<div class='alert alert-info'>Košarica vsebuje <strong>" + 
+  				  podrobnosti.pesmi + " pesmi</strong> s skupnim časom izvajanja <strong>" + 
+  				  podrobnosti.cas + " minut</strong>.</div>"
+  				);
+  			});
+  		});
+  
+  		$("#izbrisi").click(function () {
+  			$.get("/izbrisiKosarico", function (napaka) {
+  				if (napaka) {
+  					$("#sporocilo").html(
+  					  "<div class='alert alert-danger'>Prišlo je do <strong>" +
+  						"napake pri brisanju pesmi</strong> iz košarice! " + 
+  						"Prosimo poskusite znova.</div>"
+  					);
+  				}
+  			});
+  		});
+  	});
+  </script>
+</body>
+</html>
