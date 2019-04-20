@@ -81,7 +81,7 @@
 					<div class="form-group">
 						<p class="help-block"><%= sporocilo %></p>
 						<input type="submit" id="Register" class="btn btn-default" 
-						  value="Registracija" disabled/>
+						  value="Registracija" />
 					</div>
 				</form>
 			</div>
@@ -140,9 +140,23 @@
 				document.getElementById("Country").value = "";
 				document.getElementById("Register").disabled = true;
 			}
-
+		
+			})
+		document.getElementById("Email").addEventListener("keyup", function() {
+			if( emailRegex.test(this.value)) {
+				document.getElementById("EmailValidate").className="glyphicon glyphicon-ok";
+				document.getElementById("Register").disabled = false;
+				
+			} else {
+				document.getElementById("Register").disabled=true;
+			}
 		});
-	});
+	
+			
+		
+		});
+     
+
 </script>
 </body>
 </html>
