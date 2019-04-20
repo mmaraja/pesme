@@ -151,10 +151,47 @@
 				document.getElementById("Register").disabled=true;
 			}
 		});
-	
-			
 		
-		});
+    $.ajax({
+    url: 'https://api.lavbic.net/kraji',
+    type: 'GET',
+    dataType: 'json',
+    contentType: 'application/json; charset=utf-8',                    
+    success: function (data) {       
+    	console.log("mydata", data);
+		var mesta = $.map(data, function(item) {
+          return {
+            value: item.kraj,
+              
+            label: item.kraj,
+            postna: item.postnaStevilka,
+            drzava: "Slovenija"
+          };
+        });
+        
+        	$('#City').autocomplete({
+            source: mesta,
+            minLength: 1,
+            scroll: true,
+            select: function( event, ui ) {
+    					$('#PostalCode').val(ui.item.postna);
+    					$('#Country').val(ui.item.drzava);
+    				}
+            
+    		})	
+        
+        
+        
+    }                
+	});
+	
+	
+ 
+       
+    });
+	
+	
+    
      
 
 </script>
