@@ -95,7 +95,7 @@
 						<select size="10" id="seznamStrank" name="seznamStrank" class="form-control">
 							<% seznamStrank.forEach(function(stranka) { %>
 							<option value="<%= stranka.CustomerId %>">
-								<%= stranka.FirstName %> <%= stranka.LastName %>, <%= stranka.Email %>
+								<%= stranka.FirstName %> <%= stranka.LastName %>, <%= stranka.Email %> :: <%= stranka.Country %> (<%= stranka.StRacunov %>)
 							</option>
 							<% }) %>
 						</select>
@@ -142,6 +142,9 @@
 			}
 
 		});
+	
+
+
 	});
 </script>
 </body>
