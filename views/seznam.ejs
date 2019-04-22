@@ -66,9 +66,27 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
   	$(document).ready(function () {
-  		function izracunajCenoKosariceZDavkom() {
-  			return -1;
-  		}
+  		function izracunajCenoKosariceZDavkom(callback) {
+  		 var value=0;
+        $.get("/kosarica",function(lista){
+          
+          for(var i = 0; i < lista.length; i++)  {
+            
+             value += lista[i].cena;
+           //  ++value;
+          }
+          if (typeof callback === "function") {
+             callback(value);
+             return Math.round(value*100)/100;   
+          }
+       
+        });
+      }
+      izracunajCenoKosariceZDavkom(function(kosaricaC) {
+        $("#cena").html(kosaricaC);   //	$("#cena").html(izracunajCenoKosariceZDavkom());
+      });
+      
+
   
   		function premakniPesemIzSeznamaVKosarico(id, naziv, izvajalec, cena, stopnja, dodajVSejo) {
   			if (dodajVSejo) {
@@ -136,8 +154,25 @@
   		});
   
   		function preveriPogojeNakupa() {
-  			return true;
-  		}
+  		  var k=izracunajCenoKosariceZDavkom();
+  		  k=true,
+  		  $.get("/kosarica", function () {
+  		 
+  		    if( k < 1) {
+  		      $("#sporocilo").html(
+  					  "<div class='alert alert-danger'>Skupna <strong>cena </strong>pesmi v košarici" +
+  					  "<strong> mora znašati vsaj 1€</strong>!</div>"
+  					); 
+  					
+  		    } else if (k > 25) {
+  		      $("#sporocilo").html("<div class='alert alert-danger'>Skupna<strong> cena</strong> pesmi v košarici<strong> ne sme presegati 25 €!</strong></div>"
+  		    );
+  		    } 
+  		    
+  		  });
+  		
+  			return k;
+  	}
   
   		$("#racun_html").click(function () {
   			if (preveriPogojeNakupa())
