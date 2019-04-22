@@ -95,7 +95,7 @@
 						<select size="10" id="seznamStrank" name="seznamStrank" class="form-control">
 							<% seznamStrank.forEach(function(stranka) { %>
 							<option value="<%= stranka.CustomerId %>">
-								<%= stranka.FirstName %> <%= stranka.LastName %>, <%= stranka.Email %>
+								<%= stranka.FirstName %> <%= stranka.LastName %>, <%= stranka.Email %> :: <%= stranka.Country %> (<%= stranka.StRacunov %>)
 							</option>
 							<% }) %>
 						</select>
@@ -112,7 +112,7 @@
 					<div class="form-group">
 						<select size="10" id="seznamRacunov" name="seznamRacunov" class="form-control">
 							<% seznamRacunov.forEach(function(racun) { %>
-							<option value="<%= racun.InvoiceId %>" customerId="<%= racun.CustomerId %>" selected>
+							<option value="<%= racun.InvoiceId %>" customerId="<%= racun.CustomerId %>"  selected>
 								<%= racun.Naziv %>
 							</option>
 							<% }) %>
@@ -152,6 +152,10 @@
 			}
 		});
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> pregled-stranke
 		
     $.ajax({
     url: 'https://api.lavbic.net/kraji',
@@ -183,8 +187,14 @@
         
         
         
+<<<<<<< HEAD
     }                
 =======
+=======
+    } 
+    });
+
+>>>>>>> pregled-stranke
 		$("#seznamStrank").click( function() {
 			var sezstr= $("#seznamStrank option:selected").val();
 			$("racun-stranke").removeClass("racun-stranke");
@@ -193,7 +203,17 @@
         }); 
 	
 
+	
+	
+ 
+       
+    });
+	
+	
+    
+     
 
+<<<<<<< HEAD
 >>>>>>> pregled-stranke
 	});
 	
@@ -206,6 +226,8 @@
     
      
 
+=======
+>>>>>>> pregled-stranke
 </script>
 </body>
 </html>
