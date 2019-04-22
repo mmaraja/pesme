@@ -95,7 +95,7 @@
 						<select size="10" id="seznamStrank" name="seznamStrank" class="form-control">
 							<% seznamStrank.forEach(function(stranka) { %>
 							<option value="<%= stranka.CustomerId %>">
-								<%= stranka.FirstName %> <%= stranka.LastName %>, <%= stranka.Email %> :: <%= stranka.Country %> (<%= stranka.StRacunov %>)
+								<%= stranka.FirstName %> <%= stranka.LastName %>, <%= stranka.Email %>
 							</option>
 							<% }) %>
 						</select>
@@ -143,9 +143,9 @@
 
 		});
 		$("#seznamStrank").click( function() {
-			var sezstr= $(this).val();
-			$("racun-stranke").remove("racun-stranke");
-			$("#seznamRacunov >option[customerId=" + sezstr  + "]").addClass("racun-stranke");
+			var sezstr= $("#seznamStrank option:selected").val();
+			$("racun-stranke").removeClass("racun-stranke");
+			$("#seznamRacunov>option[customerId=" + sezstr  + "]").addClass("racun-stranke");
 			
         }); 
 	
