@@ -81,7 +81,7 @@
 					<div class="form-group">
 						<p class="help-block"><%= sporocilo %></p>
 						<input type="submit" id="Register" class="btn btn-default" 
-						  value="Registracija" disabled/>
+						  value="Registracija" />
 					</div>
 				</form>
 			</div>
@@ -95,7 +95,7 @@
 						<select size="10" id="seznamStrank" name="seznamStrank" class="form-control">
 							<% seznamStrank.forEach(function(stranka) { %>
 							<option value="<%= stranka.CustomerId %>">
-								<%= stranka.FirstName %> <%= stranka.LastName %>, <%= stranka.Email %>
+								<%= stranka.FirstName %> <%= stranka.LastName %>, <%= stranka.Email %> :: <%= stranka.Country %> (<%= stranka.StRacunov %>)
 							</option>
 							<% }) %>
 						</select>
@@ -112,7 +112,7 @@
 					<div class="form-group">
 						<select size="10" id="seznamRacunov" name="seznamRacunov" class="form-control">
 							<% seznamRacunov.forEach(function(racun) { %>
-							<option value="<%= racun.InvoiceId %>" customerId="<%= racun.CustomerId %>" selected>
+							<option value="<%= racun.InvoiceId %>" customerId="<%= racun.CustomerId %>"  selected>
 								<%= racun.Naziv %>
 							</option>
 							<% }) %>
@@ -140,8 +140,52 @@
 				document.getElementById("Country").value = "";
 				document.getElementById("Register").disabled = true;
 			}
-
+		
+			})
+		document.getElementById("Email").addEventListener("keyup", function() {
+			if( emailRegex.test(this.value)) {
+				document.getElementById("EmailValidate").className="glyphicon glyphicon-ok";
+				document.getElementById("Register").disabled = false;
+				
+			} else {
+				document.getElementById("Register").disabled=true;
+			}
 		});
+
+		
+    $.ajax({
+    url: 'https://api.lavbic.net/kraji',
+    type: 'GET',
+    dataType: 'json',
+    contentType: 'application/json; charset=utf-8',                    
+    success: function (data) {       
+    	console.log("mydata", data);
+		var mesta = $.map(data, function(item) {
+          return {
+            value: item.kraj,
+              
+            label: item.kraj,
+            postna: item.postnaStevilka,
+            drzava: "Slovenija"
+          };
+        });
+        
+        	$('#City').autocomplete({
+            source: mesta,
+            minLength: 1,
+            scroll: true,
+            select: function( event, ui ) {
+    					$('#PostalCode').val(ui.item.postna);
+    					$('#Country').val(ui.item.drzava);
+    				}
+            
+    		})	
+        
+        
+        
+    } 
+    });
+
 		$("#seznamStrank").click( function() {
 			var sezstr= $("#seznamStrank option:selected").val();
 			$("racun-stranke").removeClass("racun-stranke");
@@ -150,8 +194,16 @@
         }); 
 	
 
+	
+	
+ 
+       
+    });
+	
+	
+    
+     
 
-	});
 </script>
 </body>
 </html>
