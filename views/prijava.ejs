@@ -151,6 +151,7 @@
 				document.getElementById("Register").disabled=true;
 			}
 		});
+<<<<<<< HEAD
 		
     $.ajax({
     url: 'https://api.lavbic.net/kraji',
@@ -183,6 +184,17 @@
         
         
     }                
+=======
+		$("#seznamStrank").click( function() {
+			var sezstr= $("#seznamStrank option:selected").val();
+			$("racun-stranke").removeClass("racun-stranke");
+			$("#seznamRacunov>option[customerId=" + sezstr  + "]").addClass("racun-stranke");
+			
+        }); 
+	
+
+
+>>>>>>> pregled-stranke
 	});
 	
 	
